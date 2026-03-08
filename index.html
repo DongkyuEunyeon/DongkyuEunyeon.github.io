@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동규 & 은연의 결혼식에 초대합니다</title>
+    <style>
+        /* 기본 스타일 설정 */
+        :root {
+            --bg-color: #fcfaf8;
+            --text-color: #444;
+            --accent-color: #b8a291;
+            --font-main: 'Pretendard', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section {
+            width: 100%;
+            max-width: 450px;
+            padding: 60px 20px;
+            box-sizing: border-box;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        /* 스크롤 애니메이션 활성화 클래스 */
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 메인 상단 (Main Visual) */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), 
+                        url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80'); /* 임시 이미지 */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 { font-weight: 300; font-size: 1.5rem; letter-spacing: 5px; }
+        .hero .names { font-size: 2.2rem; margin: 20px 0; }
+
+        /* 초대 문구 (Invitation) */
+        .invitation .title {
+            color: var(--accent-color);
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+        }
+
+        .content { line-height: 2; font-size: 0.95rem; }
+
+        /* 캘린더/날짜 부분 */
+        .date-box {
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+            margin: 40px 0;
+        }
+
+        /* 버튼 스타일 */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="hero visible">
+        <h1>MARRIAGE</h1>
+        <div class="names">동규 & 은연</div>
+        <p>2026. 10. 10. SAT PM 12:00</p>
+    </section>
+
+    <section class="invitation">
+        <p class="title">INVITATION</p>
+        <div class="content">
+            함께 있는 것만으로도<br>
+            마음이 따뜻해지는 사람을 만났습니다.<br><br>
+            저희 두 사람이 사랑의 이름으로<br>
+            지키며 살아가고자 합니다.<br>
+            귀한 걸음으로 축복해 주시면 감사하겠습니다.
+        </div>
+        <div class="date-box">
+            <p><strong>2026년 10월 10일</strong></p>
+            <p>토요일 오후 12시 00분</p>
+            <p>삼일교회 B관</p>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=삼일교회+B관" 
+		   target="_blank" 
+		   class="btn">
+		   구글 지도로 보기
+		</a>
+    </section>
+
+    <section class="gallery">
+        <p class="title">GALLERY</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <img src="https://picsum.photos/400/500?random=1" style="width:100%; border-radius:8px;">
+            <img src="https://picsum.photos/400/500?random=2" style="width:100%; border-radius:8px;">
+        </div>
+    </section>
+
+    <script>
+        // 스크롤 시 섹션이 나타나는 간단한 자바스크립트
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
