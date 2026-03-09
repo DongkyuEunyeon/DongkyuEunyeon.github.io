@@ -100,11 +100,13 @@
     <section class="invitation">
         <p class="title">INVITATION</p>
         <div class="content">
-            함께 있는 것만으로도<br>
-            마음이 따뜻해지는 사람을 만났습니다.<br><br>
-            저희 두 사람이 사랑의 이름으로<br>
-            지키며 살아가고자 합니다.<br>
-            귀한 걸음으로 축복해 주시면 감사하겠습니다.
+            무엇보다도 서로 깊이 사랑하십시오.<br>
+            사랑은 허다한 죄를 덮습니다.<br>
+            베드로전서 4:8<br><br>
+            이 말씀 위에<br>
+			사랑으로 서로를 덮는 작은 교회,<br>
+			한 가정을 세워가려 합니다.<br>
+			귀한 걸음으로 함께 축복해 주세요<br>
         </div>
         <div class="date-box">
             <p><strong>2026년 10월 10일</strong></p>
@@ -137,6 +139,28 @@
 			<img src="./images/4.jpg" style="width:100%; border-radius:8px;" alt="웨딩 사진 4">
 		</div>
     </section>
+const FloatingFooter = () => {
+  return (
+    <div style={{
+      position: 'fixed',
+      bottom: '20px',
+      left: 0,
+      width: '100%',
+      backgroundColor: 'transparent',
+      color: '#888',
+      textAlign: 'center',
+      padding: 0,
+      fontSize: '0.8rem',
+      letterSpacing: '1px',
+      zIndex: 9999,
+      border: 'none',
+      pointerEvents: 'none',
+      textShadow: '0 1px 2px rgba(255,255,255,0.8)'
+    }}>
+      동규 ♥ 은연 all rights reserved
+    </div>
+  );
+};
 
     <script>
         // 스크롤 시 섹션이 나타나는 간단한 자바스크립트
